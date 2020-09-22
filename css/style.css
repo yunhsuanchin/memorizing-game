@@ -1,0 +1,124 @@
+/* *{
+  border: 1px solid black;
+  box-sizing: border-box;
+} */
+
+.wrap{
+  width: 85%;
+  margin: 0 auto;
+}
+
+#cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  /* 設定卡片排版 */
+  border: 2px solid #e0e0e0;
+  flex: 7% 0 1;
+  height: 8vw; /* view width 依視窗的寬度等比例變化 */
+  margin: 2px;
+
+  /* 設定卡片內部 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card img{
+  max-width: 30%;
+  align-self: center;
+}
+
+.card p{
+  font-size: 10px;
+  font-family: Nunito;
+  margin: 3px;
+}
+
+.card p:last-child{
+  transform: rotate(180deg);
+}
+
+.back{
+  background-image: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+  background-size: contain;
+}
+
+.paired{
+  background-color: #dae0e3;
+}
+
+#header{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#header .title{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#header .title img{
+  max-width: 3em;
+}
+
+#header .title h2{
+  padding-left: 0.5em;
+}
+
+#header .score{
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried{
+  margin-top: 0;
+}
+
+.wrong{
+  animation: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+
+@keyframes wrongAnimation{
+  to{
+    border: 2px solid #ffd54f;
+  }
+}
+
+.completed{
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 30vh;
+  left: -0vw;
+  background-color: RGBA(232, 246, 254, 0.8);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.completed > h2{
+  font-size: 2em;
+  animation: completeAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.completed > p{
+  font-size: 1.5em;
+  margin: 0;
+}
+
+@keyframes completeAnimation{
+  to{
+    transform: scale(1.5);
+    color: red;
+  }
+}
+
